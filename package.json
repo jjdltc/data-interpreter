@@ -1,0 +1,46 @@
+{
+  "name": "data-interpreter",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "data-interpreter",
+  "private": true,
+  "main": "src/index.js",
+  "author": "Joel De La Torriente <jjdltc@gmail.com> (https://github.com/jjdltc)",
+  "scripts": {
+    "test": "mocha --recursive",
+    "lint": "eslint .",
+    "coverage": "nyc --reporter=html --reporter=text --reporter=text-summary npm run test"
+  },
+  "files": [
+    "/src"
+  ],
+  "keywords": [
+    "data-interpreter",
+    "template",
+    "transform",
+    "normalize",
+    "structure",
+    "scheme",
+    "json",
+    "data",
+    "mapping",
+    "interpreter"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.1.0",
+    "husky": "^3.0.2",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "rewire": "^4.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
