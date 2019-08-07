@@ -1,9 +1,8 @@
 {
   "name": "data-interpreter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
-  "description": "data-interpreter",
-  "private": true,
+  "description": "A library to transform / normalize / map a data source (JS Data Structure) using a template",
   "main": "src/index.js",
   "author": "Joel De La Torriente <jjdltc@gmail.com> (https://github.com/jjdltc)",
   "scripts": {
@@ -42,5 +41,18 @@
       "pre-commit": "npm run lint && npm run test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "maintainers": [
+    "Joel De La Torriente <jjdltc@gmail.com> (http://jjdltc.com)"
+  ],
+  "contributors": [
+    "Joel De La Torriente <jjdltc@gmail.com> (http://jjdltc.com)"
+  ],
+  "bugs": {
+    "url": "https://github.com/jjdltc/data-interpreter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjdltc/data-interpreter.git"
   }
 }
