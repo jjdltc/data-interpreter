@@ -1,9 +1,9 @@
 {
   "name": "data-interpreter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "A library to transform / normalize / map a data source (JS Data Structure) using a template",
-  "main": "src/index.js",
+  "main": "src/main.js",
   "author": "Joel De La Torriente <jjdltc@gmail.com> (https://github.com/jjdltc)",
   "scripts": {
     "test": "mocha --recursive",
