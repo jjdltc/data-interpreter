@@ -8,23 +8,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      # - uses: actions/setup-node@v1
-      #   with:
-      #     node-version: 12 
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12 
       #     registry-url: 'https://registry.npmjs.org'
-      # - run: npm install
-      # - run: npm test
+      - run: |
+          npm install
+          npm test
       # - run: npm publish
       #   env: 
       #     NODE_AUTH_TOKEN: ${{secrets.NPM_GitHub_Token}}
 
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12 
-          registry-url: https://npm.pkg.github.com
-          scope: '@jjdltc'
-      - run: |
-          npm install
-          npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - uses: actions/setup-node@v1
+      #   with:
+      #     node-version: 12 
+      #     registry-url: https://npm.pkg.github.com
+      #     scope: '@jjdltc'
+      # - run: |
+      #     npm install
+      #     npm publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
