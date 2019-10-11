@@ -1,20 +1,30 @@
 name: Node.js Package Publish To NPM
 
 on:
-  push:
-    tags:
-      - v1.*.*
+  release:
+    types: [published]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - uses: actions/checkout@v1
+      # - uses: actions/setup-node@v1
+      #   with:
+      #     node-version: 12 
+      #     registry-url: 'https://registry.npmjs.org'
+      # - run: npm install
+      # - run: npm test
+      # - run: npm publish
+      #   env: 
+      #     NODE_AUTH_TOKEN: ${{secrets.NPM_GitHub_Token}}
+
+      - uses: actions/setup-node@v1
         with:
           node-version: 12 
-          registry-url: 'https://registry.npmjs.org'
-      - run: npm install
-      - run: npm test
-      - run: npm publish
-        env: 
-          NODE_AUTH_TOKEN: ${{secrets.NPM_GitHub_Token}}
+          registry-url: https://npm.pkg.github.com
+          scope: '@jjdltc'
+      - run: |
+          npm install
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
