@@ -10,16 +10,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup
-        uses: actions/checkout@master
-        uses: actions/setup-node@master
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
         with:
           node-version: 12 
           registry-url: 'https://registry.npmjs.org'
-      - name: Build & Test
-        run: npm install
-        run: npm test
-      - name: Publish to NPM
-        run: npm publish
+      - run: npm install
+      - run: npm test
+      - run: npm publish
         env: 
           NODE_AUTH_TOKEN: ${{secrets.NPM_GitHub_Token}}
