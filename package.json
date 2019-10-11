@@ -1,6 +1,6 @@
 {
   "name": "data-interpreter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "description": "A library to transform / normalize / map a data source (JS Data Structure) using a template",
   "main": "src/main.js",
