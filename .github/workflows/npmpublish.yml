@@ -2,10 +2,8 @@ name: Node.js Package Publish To NPM
 
 on:
   push:
-    branches:
-      - master
     tags:
-      - v[1-9].*
+      - v1.*.*
 jobs:
   build:
     runs-on: ubuntu-latest
