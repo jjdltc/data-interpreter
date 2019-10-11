@@ -2,29 +2,24 @@ name: Node.js Package Publish To NPM
 
 on:
   push:
-    branches:    # Array of patterns that match refs/heads
+    branches:
       - master
-
+    tags:
+      - v[1-9].*
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - name: Setup
+        uses: actions/checkout@master
+        uses: actions/setup-node@master
         with:
-          node-version: 12
-      - run: npm install
-      - run: npm test
-
-  # publish-npm:
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v1
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 12
-  #         registry-url: https://registry.npmjs.org/
-  #     - run: npm publish
-  #       env:
-  #         NODE_AUTH_TOKEN: ${{secrets.NPM_GitHub_Token}}
+          node-version: 12 
+          registry-url: 'https://registry.npmjs.org'
+      - name: Build & Test
+        run: npm install
+        run: npm test
+      - name: Publish to NPM
+        run: npm publish
+        env: 
+          NODE_AUTH_TOKEN: ${{secrets.NPM_GitHub_Token}}

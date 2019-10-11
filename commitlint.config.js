@@ -22,6 +22,7 @@ module.exports = {
                 "build",    "chore",    "docs",
                 "feat",     "fix",      "perf",
                 "refactor", "revert",   "test",
+                "ci",
             ],
         ],
     },
